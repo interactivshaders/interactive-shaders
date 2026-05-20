@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive WebGL Shaders - Raymarching 3D visualizations">
+    <title>Interactive Shaders - WebGL Raymarching</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="glcanvas"></canvas>
+    
+    <!-- Info Panel -->
+    <div id="info-panel">
+        <div id="info">
+            <h1 id="shader-title">Shader: Superficie Lunar</h1>
+            <p id="shader-description">Renderizado usando Raymarching SDF (Funciones de Distancia).</p>
+            <p>FPS: <span id="fps">0</span></p>
+            <p style="margin-top: 10px; color: #4fa; font-weight: bold;" id="controls-info">
+                [ Arrastra para rotar | Rueda para zoom | R para resetear ]
+            </p>
+        </div>
+    </div>
+
+    <!-- Shader Selector -->
+    <div id="shader-selector">
+        <h3>Selecciona Shader:</h3>
+        <button class="shader-btn active" data-shader="luna">🌙 Luna</button>
+        <button class="shader-btn" data-shader="tierra">🌍 Tierra</button>
+        <button class="shader-btn" data-shader="espacio">🚀 Asteroide</button>
+        <button class="shader-btn" data-shader="nebula">🌌 Nebulosa</button>
+    </div>
+
+    <!-- Settings Panel -->
+    <div id="settings-panel">
+        <h3>⚙️ Configuración</h3>
+        <label>
+            <input type="checkbox" id="auto-rotate" checked> Auto-rotar
+        </label>
+        <label>
+            <input type="checkbox" id="show-info" checked> Mostrar info
+        </label>
+        <label>
+            Calidad:
+            <select id="quality">
+                <option value="low">Baja (50 pasos)</option>
+                <option value="medium" selected>Media (100 pasos)</option>
+                <option value="high">Alta (150 pasos)</option>
+            </select>
+        </label>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/shaders.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
